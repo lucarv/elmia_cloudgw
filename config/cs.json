@@ -1,0 +1,51 @@
+[{
+        "tenant": "hackathon",
+        "did": "microsoft",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=microsoft;SharedAccessKey=6Coyn2LlGXB2nQMxBS6EIMdIyPqeA+BbKG3GP32lbqg="
+    },
+    {
+        "tenant": "elmia entre 1",
+        "did": "elmia001",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=elmia001;SharedAccessKey=d4r8IF9igCmvrzvfSspUrhcKXRDVVbkFHC4druuDicw="
+    },
+    {
+        "tenant": "elmia entre 2",
+        "did": "elmia002",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=elmia002;SharedAccessKey=vjwqvAmRoYippkVu/k+IRLHSJn9X3j6ve9n9iWcoagM="
+    },
+    {
+        "tenant": "abb",
+        "did": "abb",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=abb;SharedAccessKey=ro/hlCMOA8+0kKCYZBNxqhIIGsAdRvhcT6fhvNExPKg="
+    },
+    {
+        "tenant": "ah automation",
+        "did": "aha",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=aha;SharedAccessKey=mLd94rfJrBJ3O+IEKIai6p7ww2PYG5vLXIMOtLCQSaw="
+    },
+    {
+        "tenant": "ap&t",
+        "did": "apt",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=apt;SharedAccessKey=/1oqd8uMt9uScvuPnK6VT7qw1lLqchvPk2UzX5aBf/E="
+    },
+    {
+        "tenant": "beckhoff",
+        "did": "beckhoff",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=beckhoff;SharedAccessKey=gjODyAqWYHdXefU0HW2AisFNvxitvIETW5ZiOFTo9Yk="
+    },
+    {
+        "tenant": "kuka",
+        "did": "kuka",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=kuka;SharedAccessKey=NAvpUEuXOqnex9PJBku9aYmHMGRljiwfO4TbcsFjmCg="
+    },
+    {
+        "tenant": "ravema",
+        "did": "ravema",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=ravema;SharedAccessKey=Pe7H4/f2kzmgYKjI83zNZmwz2ETQPDhZFrf2ZHdP4Dg="
+    },
+    {
+        "tenant": "schunk",
+        "did": "schunck",
+        "cs": "HostName=iothub-elmia.azure-devices.net;DeviceId=schunck;SharedAccessKey=nvcuszMoxqVO6Wd+fsVz07Pl09DPmRoFAdlXdUrlWSI="
+    }
+]
