@@ -39,13 +39,14 @@ var files = [],
     fetch = [],
     listing = false,
     processing = '',
-    faceCounter = 0,
+    attempts = 0,
+faceCounter = 0,
     noFaceCounter = 0;
 
-console.log('v0516.001');
-console.log('###-------------------------------------------------------------------------------#');
+console.log('v0517.002');
+console.log('###----------------------------------------------------------------------------#');
 console.log('### TENANT: ' + tenant);
-console.log('###-------------------------------------------------------------------------------#');
+console.log('###----------------------------------------------------------------------------#');
 
 function printResultFor(op) {
     return function printResult(err, res) {
@@ -83,6 +84,7 @@ const skipImage = (image) => {
     });
 
     listing = false;
+    attempts = 0;
     processing = '';
 };
 
@@ -123,15 +125,16 @@ const counterLog = () => {
 
 const scanFolder = () => {
     if (listing == false) {
-        console.log('### idle, get next image ...');
+        //console.log('### idle, get next image ...');
         c.list(function (err, list) {
             //process.stdout.write('.');
-            if (err)('# ERROR getting images list from FTP server -> ' + err);
+            if (err) ('# ERROR getting images list from FTP server -> ' + err);
             else {
-                console.log('# STATS: ' + list.length + ' images in server');
                 if (list == undefined)
                     console.log('# ERROR getting images list from FTP server');
                 else {
+                    console.log('# STATS: ' + list.length + ' images in server');
+
                     if (list.length > 0) {
                         let filename = list[0].name;
                         if (filename.indexOf('jpg') === -1)
@@ -140,16 +143,22 @@ const scanFolder = () => {
                                 else console.log('# DEBUG: ' + filename + ' deleted due to bad file');
                             });
                         else {
-                            console.log('### next is ...' + filename)
+                            console.log('### next is ...' + filename);
 
                             if (filename != processing) {
                                 processing = filename;
                                 listing = true;
                                 fetchImage(filename);
-                            } else console.log('# DEBUG: ' + filename + ' still being processed');
+                            } else {
+                                attempts += 1;
+                                if (attempts > 2)
+                                    skipImage(filename)
+                                else
+                                    console.log('# DEBUG: ' + filename + ' still being processed');
+                            }
                         }
                     }
-                    else 
+                    else
                         console.log('### no image in ftp server...');
                 }
             }
@@ -176,7 +185,7 @@ const fetchImage = (filename) => {
                 else console.log('# DEBUG: ' + filename + ' deleted due to bad file');
             });
             */
-           skipImage(image);
+            skipImage(image);
         } else if (stream != undefined) {
             let bufs = [];
             stream.on('data', function (data) {
