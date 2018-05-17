@@ -115,7 +115,7 @@ c.connect({
 });
 
 const counterLog = () => {
-    console.log('#------------------------------------------------------------------------------------#');
+    console.log('###----------------------------------------------------------------------------------#');
     console.log('# ' + new Date());
     console.log('# STATS: ' + faceCounter + ' faces detected');
     console.log('# STATS: ' + noFaceCounter + ' images without faces');
@@ -123,12 +123,12 @@ const counterLog = () => {
 
 const scanFolder = () => {
     if (listing == false) {
-        //console.log('### idle, get next...')
+        console.log('### idle, get next image ...');
         c.list(function (err, list) {
             //process.stdout.write('.');
             if (err)('# ERROR getting images list from FTP server -> ' + err);
             else {
-                //console.log('# STATS: ' + list.length + ' images in server');
+                console.log('# STATS: ' + list.length + ' images in server');
                 if (list == undefined)
                     console.log('# ERROR getting images list from FTP server');
                 else {
@@ -149,8 +149,8 @@ const scanFolder = () => {
                             } else console.log('# DEBUG: ' + filename + ' still being processed');
                         }
                     }
-                    //else    
-                    //console.log('### no image in ftp server...');
+                    else 
+                        console.log('### no image in ftp server...');
                 }
             }
         });
@@ -225,8 +225,8 @@ const analyseFace = (filename, byteStream) => {
                 c.delete(filename, function (err) {
                     if (err)
                         console.log('# ERROR deleting image -> ' + err);
-                    //else
-                    //    console.log('# DEBUG: ' + filename + ' deleted');
+                    else
+                        console.log('# DEBUG: ' + filename + ' deleted');
                 });
 
                 if (result.length == 0) {

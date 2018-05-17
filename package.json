@@ -1,5 +1,5 @@
 {
-  "name": "faces",
+  "name": "elmia_iot_poc",
   "version": "1.0.0",
   "description": "The connected pole is a tool that can be used by booths in a trade show to analyse its traffic.",
   "main": "index.js",
