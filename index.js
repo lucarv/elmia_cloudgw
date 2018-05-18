@@ -43,7 +43,7 @@ var files = [],
 faceCounter = 0,
     noFaceCounter = 0;
 
-console.log('v0517.002');
+console.log('v0518.001');
 console.log('###----------------------------------------------------------------------------#');
 console.log('### TENANT: ' + tenant);
 console.log('###----------------------------------------------------------------------------#');
@@ -151,8 +151,10 @@ const scanFolder = () => {
                                 fetchImage(filename);
                             } else {
                                 attempts += 1;
-                                if (attempts > 2)
-                                    skipImage(filename)
+                                if (attempts > 2) {
+                                    skipImage(filename);
+                                    console.log('# DEBUG: skipping ' + filename + ' stalled in server');
+                                }
                                 else
                                     console.log('# DEBUG: ' + filename + ' still being processed');
                             }
